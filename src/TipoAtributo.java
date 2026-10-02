@@ -1,0 +1,3 @@
+public enum TipoAtributo {
+    VITALIDADE, RESISTENCIA, FORCA, DESTREZA, INTELIGENCIA, FE
+}
