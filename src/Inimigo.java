@@ -1,5 +1,5 @@
 public class Inimigo {
-    private final TipoInimigo tipo;
+    private TipoInimigo tipo;
     private int vida;
 
     public Inimigo(TipoInimigo tipo) {
@@ -8,7 +8,10 @@ public class Inimigo {
     }
 
     public void receberDano(int dano) {
-        vida = Math.max(vida - dano, 0);
+        vida = vida - dano;
+        if (vida < 0) {
+            vida = 0;
+        }
     }
 
     public boolean estaVivo() {
@@ -19,6 +22,11 @@ public class Inimigo {
         return tipo.getDano();
     }
 
-    public int getVida() { return vida; }
-    public TipoInimigo getTipo() { return tipo; }
+    public int getVida() {
+        return vida;
+    }
+
+    public TipoInimigo getTipo() {
+        return tipo;
+    }
 }
